@@ -12,6 +12,7 @@ Color greenPastel = Color(0xffB4DF80);
 Color redPastel = Color(0xffFB836F);
 Color moccaPastel = Color(0xffF4D0B5);
 Color bluePastel = Color(0xff73B0F4);
+Color tealPastel = Color(0xff61DDBC);
 
 TextStyle titleSIP = TextStyle(fontSize: 18, fontWeight: FontWeight.w700);
 TextStyle subtitleSIP = TextStyle(fontSize: 14, fontWeight: FontWeight.w700);
