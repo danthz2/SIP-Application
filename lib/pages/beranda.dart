@@ -4,37 +4,13 @@ import 'package:sip_app/theme.dart';
 import 'dart:math' as math;
 
 import 'package:sip_app/widgets/btm_navbar.dart';
+import 'package:sip_app/widgets/top_navbar.dart';
 
 class Beranda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "SIP",
-              style: titleSIP.copyWith(color: greySIP),
-            ),
-            Text(
-              "Be Smart",
-              style: subtitleSIP.copyWith(
-                  fontWeight: FontWeight.w300, color: greySIP),
-            ),
-          ],
-        ),
-        backgroundColor: yellowSIP,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.notifications,
-              color: bluePastel,
-            ),
-          ),
-        ],
-      ),
+      appBar: MyTopNavbar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -199,4 +175,8 @@ class MyCustomClipper extends CustomClipper<Path> {
     // TODO: implement shouldReclip
     return false;
   }
+}
+
+Widget cobaWidget() {
+  return Text('hellow wolrd');
 }

@@ -1,38 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sip_app/theme.dart';
 import 'package:sip_app/widgets/btm_navbar.dart';
+import 'package:sip_app/widgets/top_navbar.dart';
 import 'beranda.dart';
 
 class PilihMatkul extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "SIP",
-              style: titleSIP.copyWith(color: greySIP),
-            ),
-            Text(
-              "Be Smart",
-              style: subtitleSIP.copyWith(
-                  fontWeight: FontWeight.w300, color: greySIP),
-            ),
-          ],
-        ),
-        backgroundColor: yellowSIP,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.notifications,
-              color: bluePastel,
-            ),
-          ),
-        ],
-      ),
+      appBar: MyTopNavbar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
