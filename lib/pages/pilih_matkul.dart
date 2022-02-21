@@ -8,7 +8,10 @@ class PilihMatkul extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyTopNavbar(),
+      appBar: MyTopNavbar(
+        titleNav: "PROGRAM STUDI",
+        iconImg: null,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

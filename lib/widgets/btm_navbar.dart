@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sip_app/pages/akun.dart';
+import 'package:sip_app/pages/beranda.dart';
 import 'package:sip_app/theme.dart';
 import 'dart:math' as math;
 
@@ -19,9 +21,21 @@ class MyBottomNavbar extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.home,
-                  size: 35,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Beranda();
+                        },
+                      ),
+                    );
+                  },
+                  child: Icon(
+                    Icons.home,
+                    size: 35,
+                  ),
                 ),
                 Text("Beranda")
               ],
@@ -37,9 +51,19 @@ class MyBottomNavbar extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.account_circle_outlined,
-                  size: 35,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Akun(),
+                      ),
+                    );
+                  },
+                  child: Icon(
+                    Icons.account_circle_outlined,
+                    size: 35,
+                  ),
                 ),
                 Text("Akun")
               ],

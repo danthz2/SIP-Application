@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sip_app/pages/belanja.dart';
 import 'package:sip_app/pages/pilih_matkul.dart';
 import 'package:sip_app/theme.dart';
 import 'dart:math' as math;
@@ -10,7 +11,11 @@ class Beranda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyTopNavbar(),
+      appBar: MyTopNavbar(
+        titleNav: "SIP",
+        subtitleNav: "Be Smart",
+        iconImg: null,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,8 +32,15 @@ class Beranda extends StatelessWidget {
             child: chooseMenu(
                 "assets/images/button_belajar.png", Icons.school, "Belajar"),
           ),
-          chooseMenu("assets/images/button_belanja.png", Icons.shopping_cart,
-              "Belanja"),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Belanja();
+              }));
+            },
+            child: chooseMenu("assets/images/button_belanja.png",
+                Icons.shopping_cart, "Belanja"),
+          ),
           SizedBox(
             height: 20,
           ),

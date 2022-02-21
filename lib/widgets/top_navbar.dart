@@ -5,8 +5,13 @@ class MyTopNavbar extends StatelessWidget implements PreferredSizeWidget {
   final String iconImg;
   final String titleNav;
   final String subtitleNav;
+  final int bgColor;
 
-  MyTopNavbar({this.iconImg = null, this.titleNav, this.subtitleNav});
+  MyTopNavbar(
+      {this.iconImg,
+      this.titleNav,
+      this.subtitleNav,
+      this.bgColor = 0xffFBD277});
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +19,28 @@ class MyTopNavbar extends StatelessWidget implements PreferredSizeWidget {
       iconTheme: IconThemeData(
         color: Colors.black, //change your color here
       ),
-      leading: Image.asset("assets/images/icon_receh.png"),
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "SIP",
-            style: titleSIP.copyWith(color: greySIP),
-          ),
-          Text(
-            "Be Smart",
-            style: subtitleSIP.copyWith(
-                fontWeight: FontWeight.w300, color: greySIP),
-          ),
-        ],
-      ),
-      backgroundColor: yellowSIP,
+      leading: (iconImg != null) ? Image.asset(iconImg) : null,
+      title: (subtitleNav != null)
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  titleNav,
+                  style: titleSIP.copyWith(color: greySIP),
+                ),
+                Text(
+                  subtitleNav,
+                  style: subtitleSIP.copyWith(
+                      fontWeight: FontWeight.w300, color: greySIP),
+                ),
+              ],
+            )
+          : Text(
+              titleNav,
+              style: titleSIP.copyWith(color: greySIP),
+            ),
+      backgroundColor: Color(bgColor),
+      elevation: 0,
       actions: [
         IconButton(
           onPressed: () {},
